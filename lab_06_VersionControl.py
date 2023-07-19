@@ -31,6 +31,7 @@ if __name__ == '__main__':
         elif option == 2:
             user_password = input('Please input a numerical 8-digit password to decode: ')
             print(f'Your decoded password is: {decode(user_password)}\n')
+            continue
         elif option ==3:
             print('\nGoodbye!')
-            program_on = False
+            program_on = False  # break out and end program
