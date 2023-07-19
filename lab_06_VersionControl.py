@@ -1,4 +1,4 @@
-# Hunter Stewart
+# Hunter Stewart and Joelie Campana (decode)
 def encode(password):
     password = [int(num) for num in list(password)]  # password to integer list for iteration
     for idx, num in enumerate(password):
@@ -13,7 +13,15 @@ def encode(password):
 
 
 def decode(password):
-    pass
+    password = [int(num) for num in list(password)] # password to integer list for iteration
+    for idx, num in enumerate(password):
+        decoded_num = password[idx] - 3
+        if decoded_num > 9: # takes amount over 9 and fits it into range
+            remainder = decoded_num - 10
+            password[idx] = remainder
+        decoded_password = ''.join([str(num) for num in password]) # decoded password put back into string
+        return decoded_password
+
 
 
 if __name__ == '__main__':
