@@ -34,11 +34,12 @@ if __name__ == '__main__':
         option = int(input('\nPlease select a menu option: '))
         if option == 1:
             user_password = input('Please input a numerical 8-digit password to encode: ')
-            print(f'Your encoded password is: {encode(user_password)}\n')
+            encoded_password = encode(user_password)
+            print(f'Your password has been encoded and stored.\n')
             continue
         elif option == 2:
-            user_password = input('Please input a numerical 8-digit password to decode: ')
-            print(f'Your decoded password is: {decode(user_password)}\n')
+            decoded_password = decode(encoded_password)
+            print(f'Your encoded password is {encoded_password}, and your original password is {decoded_password}.\n')
             continue
         elif option ==3:
             print('\nGoodbye!')
