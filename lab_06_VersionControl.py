@@ -12,15 +12,14 @@ def encode(password):
     return encoded_password
 
 
-def decode(password):
-    password = [int(num) for num in list(password)] # password to integer list for iteration
-    for idx, num in enumerate(password):
-        decoded_num = password[idx] - 3
-        if decoded_num > 9: # takes amount over 9 and fits it into range
-            remainder = decoded_num - 10
-            password[idx] = remainder
-        decoded_password = ''.join([str(num) for num in password]) # decoded password put back into string
-        return decoded_password
+def decode(encoded_password):
+    decoded_password = ""
+    # iterate through decoded pw, subtract 3 from each
+    for i in encoded_password:
+        subtracted = str((int(i) - 3) % 10)
+        # append to string
+        decoded_password += subtracted
+    return decoded_password
 
 
 
